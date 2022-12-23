@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SimpleClc extends StatefulWidget {
@@ -15,7 +15,7 @@ class _SimpleClcState extends State<SimpleClc> {
           border: Border.all(color: Colors.purple, width: 10),
         ),
         child: Scaffold(
-          body: Text('hello from Jadoo',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+          body: Image.asset('assets/Images/1222.jpg',width: 100,height: 100),
         ),
       ),
     );
