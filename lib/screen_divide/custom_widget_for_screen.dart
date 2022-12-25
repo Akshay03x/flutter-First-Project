@@ -23,22 +23,22 @@ class CoustomWidget extends StatelessWidget{
         child: Column(
           children: [
             Flexible(
-              flex: this.flex1,
+              flex: flex1,
               child: Container(
                 // margin: EdgeInsets.all(10),
-                color: this.color1,
+                color: color1,
               ),
             ),
             Flexible(
-              flex: this.flex2,
+              flex: flex2,
               child: Container(
-                color: this.color2,
+                color: color2,
               ),
             ),
             Flexible(
-              flex: this.flex3,
+              flex: flex3,
               child: Container(
-                color: this.color3,
+                color: color3,
               ),
             ),
           ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:matrimony/home_page.dart';
-import 'package:matrimony/my_home_page.dart';
+import 'package:matrimony/screen_divide/my_home_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
