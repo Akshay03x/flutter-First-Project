@@ -15,7 +15,7 @@ class _SimpleClcState extends State<SimpleClc> {
           border: Border.all(color: Colors.purple, width: 10),
         ),
         child: Scaffold(
-          body: Image.asset('assets/Images/1222.jpg',width: 100,height: 100),
+          body: Image.asset('assets/Images/1222.jpg', width: 100, height: 100),
         ),
       ),
     );
