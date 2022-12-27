@@ -12,9 +12,9 @@ class _SimpleClcState extends State<SimpleClc> {
   late TextEditingController _roiController;
   late TextEditingController _tpController;
 
-  late  double principleAmount =0;
-  late  double totalInterest=0 ;
-  late double totalAmount =0;
+  late double principleAmount = 0;
+  late double totalInterest = 0;
+  late double totalAmount = 0;
 
   @override
   void initState() {
@@ -29,7 +29,10 @@ class _SimpleClcState extends State<SimpleClc> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Simple Clc'),
+          title: Text(
+            'Simple Clc',
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
           backgroundColor: Colors.black,
         ),
         body: SingleChildScrollView(
@@ -58,9 +61,10 @@ class _SimpleClcState extends State<SimpleClc> {
                   ),
                   color: Colors.black,
                 ),
-                Custom("Principle Amount  ", true, null, principleAmount.toString()),
-                Custom("Total interest ", true, null,totalInterest.toString()),
-                Custom("Total Amount ", true, null,totalAmount.toString() ),
+                Custom("Principle Amount  ", true, null,
+                    principleAmount.toString()),
+                Custom("Total interest ", true, null, totalInterest.toString()),
+                Custom("Total Amount ", true, null, totalAmount.toString()),
               ],
             ),
           ),
@@ -69,19 +73,18 @@ class _SimpleClcState extends State<SimpleClc> {
     );
   }
 
-  void CalulateValue(){
+  void CalulateValue() {
     setState(
-          () {
+      () {
         FocusManager.instance.primaryFocus?.unfocus();
-        double amount=double.parse(_amountController.text) ;
-        double  roi=double.parse(_roiController.text) ;
-        double  tp=double.parse(_tpController.text);
+        double amount = double.parse(_amountController.text);
+        double roi = double.parse(_roiController.text);
+        double tp = double.parse(_tpController.text);
 
-        this.principleAmount=amount;
-        this.totalInterest=(amount*((roi/100)*tp));
-        this.totalAmount=totalInterest+principleAmount;
+        this.principleAmount = amount;
+        this.totalInterest = (amount * ((roi / 100) * tp));
+        this.totalAmount = totalInterest + principleAmount;
       },
     );
   }
-
 }
