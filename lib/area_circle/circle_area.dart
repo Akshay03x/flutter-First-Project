@@ -11,13 +11,14 @@ class Circle extends StatefulWidget {
 
 class _CircleState extends State<Circle> {
   late TextEditingController _radius;
-  late double answer=0;
+  late double answer = 0;
 
   @override
   void initState() {
     super.initState();
-    _radius=TextEditingController();
+    _radius = TextEditingController();
   }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -33,13 +34,15 @@ class _CircleState extends State<Circle> {
           children: [
             Container(
               margin: EdgeInsets.only(top: 10),
-              child: Newidget("Enter Radius", false,_radius,0),
+              child: Newidget("Enter Radius", false, _radius, 0),
             ),
             Container(
               margin: EdgeInsets.only(top: 16),
               color: Colors.black,
               child: TextButton(
-                onPressed: () {Calculatevalue();},
+                onPressed: () {
+                  Calculatevalue();
+                },
                 child: const Text(
                   "Calculate",
                   style: TextStyle(
@@ -50,7 +53,7 @@ class _CircleState extends State<Circle> {
               ),
             ),
             Container(
-              child: Newidget("Answer is:", true,null,answer),
+              child: Newidget("Answer is:", true, null, answer),
             )
           ],
         ),
@@ -58,7 +61,7 @@ class _CircleState extends State<Circle> {
     );
   }
 
-  Widget Newidget(HintText, flag,controller,answer) {
+  Widget Newidget(HintText, flag, controller, answer) {
     return Container(
       margin: const EdgeInsets.only(top: 20),
       child: Row(
@@ -76,37 +79,39 @@ class _CircleState extends State<Circle> {
             ),
           ),
           flag
-              ?  Expanded(
-                flex: 2,
-                child: Text(answer.toString()),
-          )
-              :  Expanded(
-            child: Container(
-              margin: EdgeInsets.only(right: 15),
-              child: TextField(
-                controller: controller,
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  hintText: HintText,
-                  border: OutlineInputBorder(
-                    borderSide:
-                    BorderSide(width: 3, color: Colors.greenAccent),
-                    borderRadius: BorderRadius.circular(50.0),
+              ? Expanded(
+                  flex: 2,
+                  child: Text(answer.toString()),
+                )
+              : Expanded(
+                  child: Container(
+                    margin: EdgeInsets.only(right: 15),
+                    child: TextField(
+                      controller: controller,
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        hintText: HintText,
+                        border: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(width: 3, color: Colors.greenAccent),
+                          borderRadius: BorderRadius.circular(50.0),
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-            ),
-          )
+                )
         ],
       ),
     );
   }
-  Calculatevalue(){
-    setState(() {
-      FocusManager.instance.primaryFocus?.unfocus();
-      double value =double.parse(_radius.text);
-      this.answer=value*value*pi;
 
-    },);
+  Calculatevalue() {
+    setState(
+      () {
+        FocusManager.instance.primaryFocus?.unfocus();
+        double value = double.parse(_radius.text);
+        this.answer = value * value * pi;
+      },
+    );
   }
 }
