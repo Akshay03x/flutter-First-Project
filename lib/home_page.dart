@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:matrimony/login_page/pre_login_page.dart';
 import 'package:matrimony/new_screen_divide/new_screen_divide.dart';
 import 'package:matrimony/new_screen_divide/new_screen_divide2.dart';
 import 'package:matrimony/new_screen_divide/new_screen_divide3.dart';
@@ -41,7 +42,9 @@ class _home_pageState extends State<home_page> {
               CustomForContainer(color: Colors.black, function: NewScreenDivide4(),text: "New Screen 4"),
               CustomForContainer(color: Colors.lightGreen, function: NewScreenDivide5(),text: "New Screen 5"),
               CustomForContainer(color: Colors.pink, function: NewScreenDivide6(),text: "New Screen 6"),
+              CustomForContainer(color: Colors.amberAccent, function:LoginPage(),text: "Login Page"),
             ],
+
           ),
         ),
       ),
@@ -49,18 +52,20 @@ class _home_pageState extends State<home_page> {
   }
 
   Widget CustomForContainer({required color, required function,required text}) {
-    return Container(
-      margin: EdgeInsets.all(10),
-      color: color,
-      child: TextButton(
-        onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => function));
-        },
-        child: Text(
-          text,
-          style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+    return Flexible(
+      child: Container(
+        margin: EdgeInsets.all(10),
+        color: color,
+        child: TextButton(
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => function));
+          },
+          child: Text(
+            text,
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+          ),
         ),
       ),
     );
