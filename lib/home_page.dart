@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:matrimony/dice/dice_random.dart';
 import 'package:matrimony/login_page/pre_login_page.dart';
 import 'package:matrimony/new_screen_divide/new_screen_divide.dart';
 import 'package:matrimony/new_screen_divide/new_screen_divide2.dart';
@@ -43,6 +44,7 @@ class _home_pageState extends State<home_page> {
               CustomForContainer(color: Colors.lightGreen, function: NewScreenDivide5(),text: "New Screen 5"),
               CustomForContainer(color: Colors.pink, function: NewScreenDivide6(),text: "New Screen 6"),
               CustomForContainer(color: Colors.amberAccent, function:LoginPage(),text: "Login Page"),
+              CustomForContainer(color: Colors.amberAccent, function:Dice(),text: "Dice"),
             ],
 
           ),

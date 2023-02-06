@@ -10,10 +10,6 @@ class _NewScreenDivideState extends State<NewScreenDivide> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // appBar: AppBar(
-        //   title: Text("New Screen Divide"),
-        //   backgroundColor: Colors.black,
-        // ),
         body: Row(
           children: [
             New(c1: Colors.black, c2: Colors.pinkAccent, c3: Colors.green,f1: 2,f2: 3,f3: 2),
